@@ -74,7 +74,7 @@ public class CLinked<T> {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		ListNode<T> n = head;
-		if(isEmpty()) return "List is empty";
+		if(size<=0) return "List is empty";
 		sb.append("(Head)-> ");
 		do {
  			sb.append(n.getData()+" ");
