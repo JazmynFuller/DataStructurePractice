@@ -21,14 +21,14 @@ public class CLinked<T> {
 	
 	public void addFront(T d) {
 		if(isEmpty()) {
-			ListNode<T> n = new ListNode(d,null);
+			ListNode<T> n = new ListNode<T>(d,null);
 			head = n;
 			tail = n;
 			n.setNext(head);
 			size++;
 		}
 		else {
-			ListNode<T> n = new ListNode(d,null);
+			ListNode<T> n = new ListNode<T>(d,null);
 			ListNode<T> temp = head;
 			n.setNext(temp);
 			head = n;
@@ -39,7 +39,7 @@ public class CLinked<T> {
 	
 	public void addBack(T d) {
 		if(isEmpty()) {
-			ListNode<T> n = new ListNode(d,null);
+			ListNode<T> n = new ListNode<T> (d,null);
 			head = n;
 			tail = n;
 			n.setNext(head);
@@ -55,8 +55,15 @@ public class CLinked<T> {
 		}
 	}
 	
-	public T remove(ListNode<T> n) {
+	public T remove(ListNode<T> n) throws Exception {
 		// Insert code here 
+		if(size==-1) {
+			head = new ListNode<T> (null,null);
+			tail = new ListNode<T> (null,head);
+			head.setNext(tail);
+			size = 0;
+			throw new Exception("There's nothing else in the list");
+		}
 		ListNode<T> temp = head;
 		head = head.getNext();
 		tail.setNext(head);

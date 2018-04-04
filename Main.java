@@ -1,7 +1,7 @@
 package circular;
 
 public class Main {
-	public static void main (String[] args) {
+	public static void main (String[] args) throws Exception {
 		CLinked<Integer> list = new CLinked<Integer> ();
 		ListNode<Integer> tmp = null;
 		
